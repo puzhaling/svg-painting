@@ -12,4 +12,6 @@ struct Rectangle : Shape {
 	Rectangle(double inX, double inY, std::string_view inColour, double inWidth, double inHeight, double inRotate);
 };
 
+std::ostream& operator<<(std::ostream& out, const Rectangle* const r);
+
 #endif // RECTANGLE
