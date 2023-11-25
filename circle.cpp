@@ -5,6 +5,6 @@ Circle::Circle(double inX, double inY, std::string_view inColour, double inRadiu
 	Shape(inX, inY, inColour), radius{ inRadius }
 {};
 
-std::ostream& operator<<(std::ostream& out, const Circle* const c) {
-	return out << "<circle cx=\"" << c->x << "\" cy=\"" << c->y << "\" r=\"" << c->radius << "\"" << " fill=\"" << c->colour << "\"/>" << '\n';
+std::ostream& operator<<(std::ostream& out, const Circle& c) {
+	return out << "<circle cx=\"" << c.x << "\" cy=\"" << c.y << "\" r=\"" << c.radius << "\"" << " fill=\"" << c.colour << "\"/>" << '\n';
 }
