@@ -5,6 +5,6 @@ Rectangle::Rectangle(double inX, double inY, std::string_view inColour, double i
 	Shape(inX, inY, inColour), width{ inWidth }, height{ inHeight }, rotate{ inRotate }
 {};
 
-std::ostream& operator<<(std::ostream& out, const Rectangle* const r) {
-	return out << "<rect x=\"" << r->x << "\" y=\"" << r->y << "\" transform=\"rotate(" << r->rotate << " 0 0)" << "\" width=\"" << r->width<< "\" height=\"" << r->height << "\" fill=\"" << r->colour << "\"/>" << '\n';
+std::ostream& operator<<(std::ostream& out, const Rectangle& r) {
+	return out << "<rect x=\"" << r.x << "\" y=\"" << r.y << "\" transform=\"rotate(" << r.rotate << " 0 0)" << "\" width=\"" << r.width<< "\" height=\"" << r.height << "\" fill=\"" << r.colour << "\"/>" << '\n';
 }

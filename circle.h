@@ -10,6 +10,6 @@ struct Circle : Shape {
 	Circle(double inX, double inY, std::string_view inColour, double inRadius);
 };
 
-std::ostream& operator<<(std::ostream& out, const Circle* const c);
+std::ostream& operator<<(std::ostream& out, const Circle& c);
 
 #endif // CIRCLE
