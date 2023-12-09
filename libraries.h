@@ -1,8 +1,10 @@
-#ifndef LIBRARIES
-#define LIBRARIES
+
+#ifndef LIBRARIES_H
+#define LIBRARIES_H
 
 #include <iostream>
 #include <string_view>
 #include <fstream>
+#include <vector>
 
-#endif // LIBRARIES 
+#endif // LIBRARIES_H

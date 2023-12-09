@@ -1,5 +1,6 @@
-#ifndef SHAPE
-#define SHAPE
+
+#ifndef SHAPE_H
+#define SHAPE_H
 
 #include "libraries.h"
 
@@ -9,6 +10,9 @@ struct Shape {
 	std::string_view colour{};
 
 	Shape(double inX, double inY, std::string_view inColour);
+	virtual ~Shape();
+
+	virtual std::string draw() const = 0;
 };
 
-#endif // SHAPE
+#endif // SHAPE_H
