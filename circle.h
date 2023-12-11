@@ -5,12 +5,14 @@
 #include "libraries.h"
 #include "shape.h"
 
-struct Circle : Shape  {
-	double radius{};
-
-	Circle(double inX, double inY, std::string_view inColour, double inRadius);
+class Circle : public Shape {
+public:
+	Circle(double x, double y, std::string_view inColour, double inRadius);
 	virtual ~Circle();
+	
 	virtual std::string draw() const;
+
+	double radius{};
 };
 
 std::ostream& operator<<(std::ostream& out, const Circle* const c);

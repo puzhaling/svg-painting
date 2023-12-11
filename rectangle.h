@@ -5,14 +5,16 @@
 #include "libraries.h"
 #include "shape.h"
 
-struct Rectangle : Shape {
+class Rectangle : public Shape {
+public:
+	Rectangle(double x, double y, std::string_view inColour, double inWidth, double inHeight, double inRotate = 0);
+	virtual ~Rectangle();
+	
+	virtual std::string draw() const;
+
 	double width{};
 	double height{};
 	double rotate{};
-
-	Rectangle(double inX, double inY, std::string_view inColour, double inWidth, double inHeight, double inRotate);
-	virtual ~Rectangle();
-	virtual std::string draw() const;
 };
 
 std::ostream& operator<<(std::ostream& out, const Rectangle* const r);
