@@ -1,8 +1,8 @@
 
 #include "shape.h"
 
-Shape::Shape(double inX, double inY, std::string_view inColour) :
-	x{ inX }, y{ inY }, colour{ inColour }
+Shape::Shape(Point2d inPoint, std::string_view inColour) :
+	point{ inPoint }, colour{ inColour }
 {}
 
-Shape::~Shape() {}
+Shape::~Shape() {};

@@ -7,11 +7,12 @@
 
 class Circle : public Shape {
 public:
-	Circle(double x, double y, std::string_view inColour, double inRadius);
+	Circle(Point2d point, std::string_view inColour, double inRadius);
 	virtual ~Circle();
-	
+
 	virtual std::string draw() const;
 
+/*######################################*/
 	double radius{};
 };
 

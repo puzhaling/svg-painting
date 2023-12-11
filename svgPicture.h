@@ -6,20 +6,18 @@
 #include "rectangle.h"
 #include "circle.h"
 
-
 class svgPicture {
-private:
-	std::vector<Shape*>container{};
-
 public:
 	svgPicture();
 	~svgPicture();
 
 	void clearContainer();
 	void addFigure(Shape* shape);
-	const auto& getContainer() const;
-};
 
-std::ostream& operator<<(std::ostream& out, const svgPicture* const pic);
+	friend std::ostream& operator<<(std::ostream& out, const svgPicture* const pic);
+
+private:
+	std::vector<Shape*>container{};
+};
 
 #endif

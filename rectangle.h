@@ -7,11 +7,12 @@
 
 class Rectangle : public Shape {
 public:
-	Rectangle(double x, double y, std::string_view inColour, double inWidth, double inHeight, double inRotate = 0);
+	Rectangle(Point2d point, std::string_view inColour, double inWidth, double inHeight, double inRotate = 0);
 	virtual ~Rectangle();
-	
+
 	virtual std::string draw() const;
 
+/*######################################*/
 	double width{};
 	double height{};
 	double rotate{};

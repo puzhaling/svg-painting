@@ -3,16 +3,17 @@
 #define SHAPE_H
 
 #include "libraries.h"
+#include "point2d.h"
 
 class Shape {
 public:
-	Shape(double x, double y, std::string_view inColour);
+	Shape(Point2d point, std::string_view inColour);
 	virtual ~Shape();
 
 	virtual std::string draw() const = 0;
 
-	double x{};
-	double y{};
+/*######################################*/
+	Point2d point{};
 	std::string_view colour{};
 };
 

@@ -20,17 +20,17 @@ main() {
 		// NESTING LEVEL #1
 
 		// rectangles properties : x, y, colour, width, height, rotate
-		Rectangle* rectangle1{ new Rectangle(-20, 30, "#e28743", 130, 55, -9) };
+		Rectangle* rectangle1{ new Rectangle( Point2d{-20, 30}, "#e28743", 130, 55, -9 ) };
 		picture->addFigure(rectangle1);
 
-		Rectangle* rectangle2{ new Rectangle(-25, 40, "#063970", 180, 70, 12) };
+		Rectangle* rectangle2{ new Rectangle( Point2d{-25, 40}, "#063970", 180, 70, 12 ) };
 		picture->addFigure(rectangle2);
 
 		// circles properties : x, y, colour, radius
-		Circle* circle1{ new Circle(60, 100, "#21130d", 50) };
+		Circle* circle1{ new Circle( Point2d{60, 100}, "#21130d", 50 ) };
 		picture->addFigure(circle1);
 
-		Circle* circle2{ new Circle(110, 100, "#21130d", 40) };
+		Circle* circle2{ new Circle( Point2d{110, 100}, "#21130d", 40 ) };
 		picture->addFigure(circle2);
 
 		svg << picture;
