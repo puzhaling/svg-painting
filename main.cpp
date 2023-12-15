@@ -1,6 +1,4 @@
 
-#include "svgPicture.h"
-
 /*
 <svg xmlns="http://www.w3.org/2000/svg" width="600" height="350" viewBox="0 0 124 124" fill="none">
  <rect x="-20" y="30" transform="rotate(-9 0 0)" width="130" height="55" fill="#e28743"/>
@@ -11,32 +9,36 @@
  </svg>
 </svg>
 */
+
+#include <fstream>
+#include "svgPicture.h"
+
 int
 main() {
 	std::ofstream svg{ "pic.svg" };
 
 	if (svg.is_open()) {
 		svgPicture* picture{ new svgPicture() };
-		// NESTING LEVEL #1
 
 		// rectangles properties : x, y, colour, width, height, rotate
 		Rectangle* rectangle1{ new Rectangle( Point2d{-20, 30}, "#e28743", 130, 55, -9 ) };
-		picture->addFigure(rectangle1);
+		picture->addShape(rectangle1);
 
 		Rectangle* rectangle2{ new Rectangle( Point2d{-25, 40}, "#063970", 180, 70, 12 ) };
-		picture->addFigure(rectangle2);
+		picture->addShape(rectangle2);
 
 		// circles properties : x, y, colour, radius
 		Circle* circle1{ new Circle( Point2d{60, 100}, "#21130d", 50 ) };
-		picture->addFigure(circle1);
+		picture->addShape(circle1);
 
 		Circle* circle2{ new Circle( Point2d{110, 100}, "#21130d", 40 ) };
-		picture->addFigure(circle2);
+		picture->addShape(circle2);
 
 		svg << picture;
 		delete(picture);
+
+		svg.close();
 	}
 
-	svg.close();
 	return 0;
 }
